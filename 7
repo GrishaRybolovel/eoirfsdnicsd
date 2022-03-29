@@ -1,0 +1,24 @@
+f = open("input.txt", "r")
+inp = f.read().strip()
+f2 = open("output.txt", "w")
+
+m, k = map(int, inp.split())
+ans = []
+
+def divCheck(n):
+    sum = 0
+    while n != 0:
+        sum += n % 10
+        n = int(n / 10)
+
+    return sum % 9 == 0
+
+for i in range(k + 1):
+    if divCheck(i):
+        ans.append(str(i))
+
+ans = list(ans[len(ans) - m:len(ans) + 1:])
+
+f2.write(" ".join(ans))
+f.close()
+f2.close()
