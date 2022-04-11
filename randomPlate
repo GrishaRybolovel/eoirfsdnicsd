@@ -1,0 +1,15 @@
+import random
+
+alphabet = ["А", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "К", "Л",
+            "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч",
+            "Ш", "Щ", "Ъ", "Ы", "Ь", "Э", "Ю", "Я"]
+
+def randomPlate():
+    d = random.choice((0, 1))
+
+    if d == 0:
+        return random.choice(alphabet) + random.choice(alphabet) + random.choice(alphabet) + str(random.randint(100, 999))
+    else:
+        return str(random.randint(1000, 9999)) + random.choice(alphabet) + random.choice(alphabet) + random.choice(alphabet)
+
+print(randomPlate())
